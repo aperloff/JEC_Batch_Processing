@@ -1,0 +1,29 @@
+#!/bin/sh
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=24:00:00
+#PBS -q stakeholder
+#PBS -t 1-1
+#cd /home/aperloff/JEC/CMSSW_7_3_3_testPUPPI/src
+#cd /home/aperloff/JEC/CMSSW_7_4_1/src
+#cd /home/aperloff/JEC/CMSSW_8_0_1/src
+cd /home/aperloff/JEC/CMSSW_8_0_20/src
+#export SCRAM_ARCH=slc6_amd64_gcc491
+#export SCRAM_ARCH=slc6_amd64_gcc493
+export SCRAM_ARCH=slc6_amd64_gcc530
+eval `scramv1 runtime -sh`
+cd /fdata/hepx/store/user/aperloff/JEC/
+
+#export RELEASE_ERA="72X_PHYS14"
+#export RELEASE_ERA="73X_Spring15"
+#export RELEASE_ERA="73X_testPUPPI"
+#export RELEASE_ERA="74X_Summer15"
+#export RELEASE_ERA="80X_Spring16"
+#export RELEASE_ERA="80X_Summer16"
+export RELEASE_ERA="80X_bias2SelectionPow"
+
+#cd ${RELEASE_ERA}/correction/
+#jet_synchfit_x ../batchInputJetSynchfit${SLURM_ARRAY_TASK_ID}_0.txt
+
+jet_synchfit_x ${RELEASE_ERA}/batchInputJetSynchfit${SLURM_ARRAY_TASK_ID}_1.txt
+
+exit 0

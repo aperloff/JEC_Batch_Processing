@@ -1,0 +1,19 @@
+#!/bin/sh
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=03:00:00
+#PBS -q serial
+#PBS -t 0-0
+#cd /home/aperloff/JEC/CMSSW_7_3_3_testPUPPI/src
+cd /home/aperloff/JEC/CMSSW_7_4_1/src
+export SCRAM_ARCH=slc6_amd64_gcc491
+eval `scramv1 runtime -sh`
+cd /fdata/hepx/store/user/aperloff/JEC/
+
+#export RELEASE_ERA="72X_PHYS14"
+#export RELEASE_ERA="73X_Spring15"
+#export RELEASE_ERA="73X_testPUPPI"
+export RELEASE_ERA="74X_PFGED"
+
+jet_draw_closure_eta_ratio_x ${RELEASE_ERA}/batchInputJetDrawClosureEtaRatio${SLURM_ARRAY_TASK_ID}.txt
+
+exit 0

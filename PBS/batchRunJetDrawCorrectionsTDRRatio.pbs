@@ -1,0 +1,22 @@
+#!/bin/sh
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=03:00:00
+#PBS -q hepx
+#PBS -t 0-5
+#cd /home/aperloff/JEC/CMSSW_7_3_3_testPUPPI/src
+#cd /home/aperloff/JEC/CMSSW_7_4_1/src
+cd /home/aperloff/JEC/CMSSW_8_0_1/src
+#export SCRAM_ARCH=slc6_amd64_gcc491
+export SCRAM_ARCH=slc6_amd64_gcc493
+eval `scramv1 runtime -sh`
+cd /fdata/hepx/store/user/aperloff/JEC/
+
+#export RELEASE_ERA="72X_PHYS14"
+#export RELEASE_ERA="73X_Spring15"
+#export RELEASE_ERA="73X_testPUPPI"
+#export RELEASE_ERA="74X_Summer15"
+export RELEASE_ERA="80X_Spring16"
+
+jet_draw_corrections_TDR_ratio_x ${RELEASE_ERA}/batchInputJetDrawCorrectionsTDRRatio${SLURM_ARRAY_TASK_ID}_0.txt
+
+exit 0

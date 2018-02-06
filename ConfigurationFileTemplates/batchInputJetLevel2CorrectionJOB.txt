@@ -1,0 +1,12 @@
+input = 74X_PFGED/correctionL2L3_NoPU_v2/25ns/jra_f.root
+era = PFGED_25nsV2_MC
+l3input = 74X_PFGED/correctionL2L3_NoPU_v2/25ns/l3.root
+output = l2.root
+outputDir = 74X_PFGED/correctionL2L3_NoPU_v2/25ns/
+l2l3 = true
+batch = true
+mpv = false
+delphes = false
+maxFitIter = 30
+l2calofit = DynamicMin
+l2pffit = standard+Gaussian

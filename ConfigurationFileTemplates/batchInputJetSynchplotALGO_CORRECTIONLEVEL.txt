@@ -1,0 +1,10 @@
+inputDir = INPUTDIRECTORY
+algo1 = ALGORITHM
+algo2 = ALGORITHM
+outDir = OUTPUTDIRECTORY
+fixedRange = FIXEDRANGE
+tdr = true
+NBinsNpvRhoNpu = 6
+npvRhoNpuBinWidth = 10
+binOffset = 0
+outputFormat = .eps:::.png

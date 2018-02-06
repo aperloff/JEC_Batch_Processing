@@ -1,0 +1,41 @@
+#!/bin/sh
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=24:00:00
+#PBS -l mem=4GB
+#PBS -q stakeholder
+#PBS -t 0-0
+#cd /home/aperloff/JEC/CMSSW_7_3_3_testPUPPI/src
+#cd /home/aperloff/JEC/CMSSW_7_4_1/src
+#cd /home/aperloff/JEC/CMSSW_7_6_3/src
+#cd /home/aperloff/JEC/CMSSW_8_1_0_pre9/src
+cd /home/aperloff/JEC/CMSSW_8_0_20/src
+#export SCRAM_ARCH=slc6_amd64_gcc491
+#export SCRAM_ARCH=slc6_amd64_gcc493
+export SCRAM_ARCH=slc6_amd64_gcc530
+eval `scramv1 runtime -sh`
+cd /fdata/hepx/store/user/aperloff/JEC/
+
+#export RELEASE_ERA="72X_PHYS14"
+#export RELEASE_ERA="73X_Spring15"
+#export RELEASE_ERA="73X_testPUPPI"
+#export RELEASE_ERA="74X_Summer15"
+#export RELEASE_ERA="74X_PFGED"
+#export RELEASE_ERA="76X_Fall15"
+#export RELEASE_ERA="81X_HIP"
+#export RELEASE_ERA="81X_Delphes"
+#export RELEASE_ERA="80X_Summer16"
+export RELEASE_ERA="80X_U2U"
+
+export RESOLUTION=false
+export FLAVOR=false
+
+if [ "$RESOLUTION" = true ] ; then
+	jet_response_analyzer_x ${CMSSW_BASE}/src/JetMETAnalysis/JetAnalyzers/config/jra_dr_abscoarsebinningeta.config ${RELEASE_ERA}/batchInputJetResponseAnalyzer${SLURM_ARRAY_TASK_ID}_0.txt
+elif [ "$FLAVOR" = true ] ; then
+	#jet_response_analyzer_x ${CMSSW_BASE}/src/JetMETAnalysis/JetAnalyzers/config/jra_dr_abscoarsebinningeta_coarsebinningpt.config ${RELEASE_ERA}/batchInputJetResponseAnalyzer${SLURM_ARRAY_TASK_ID}_6.txt
+	jet_response_analyzer_x ${CMSSW_BASE}/src/JetMETAnalysis/JetAnalyzers/config/jra_dr_abscoarsebinningeta_coarsebinningpt.config ${RELEASE_ERA}/batchInputJetResponseAnalyzer${SLURM_ARRAY_TASK_ID}_7.txt
+else
+	jet_response_analyzer_x ${CMSSW_BASE}/src/JetMETAnalysis/JetAnalyzers/config/jra_dr_finebinning.config ${RELEASE_ERA}/batchInputJetResponseAnalyzer${SLURM_ARRAY_TASK_ID}_0.txt
+fi
+
+exit 0

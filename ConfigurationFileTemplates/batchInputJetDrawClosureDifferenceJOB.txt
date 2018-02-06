@@ -1,0 +1,9 @@
+doFlavorDifference = true
+basepath = 74X_PFGED/correctionL5_NoPU/25ns/
+filenames = l5.root
+algs = ak4pf
+object = AbsRspVsRefPt_JetEta0to1.3
+flavorDiff = true
+flavor1 = ud s c b
+flavor2 = g  g g g
+outputDir = 74X_PFGED/correctionL5_NoPU/25ns/

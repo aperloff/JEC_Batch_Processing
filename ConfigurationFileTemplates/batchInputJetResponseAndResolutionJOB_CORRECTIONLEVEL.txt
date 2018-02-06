@@ -1,0 +1,12 @@
+input = INPUT
+output = OUTPUT
+$algs = ALGORITHMS
+verbose = true
+semifitted = false
+dorelrsp = true
+doetarsp = true
+dophirsp = true
+calofitmin = 30
+pffitmin = 10
+fitres = true
+unweighted = true

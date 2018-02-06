@@ -1,0 +1,6 @@
+input = 74X_PFGED/correctionL5_NoPU_v3/25ns/jra.root
+algs = ak4calo ak4pf ak4calol2l3 ak4pfl2l3
+era = PFGED_V1_MC
+output = l5.root
+outputDir = 74X_PFGED/correctionL5_NoPU_v3/25ns/
+batch = true

@@ -1,0 +1,9 @@
+filepath1 = 74X_Summer15/correctionL2L3_NoPU/Corrections_Overview_ALGORITHM.root
+filepath2 = /home/aperloff/fdata/JEC_532/53X_Winter14/correctionL2L3/Corrections_Overview_ALGORITHMl1.root
+algoNum = ALGORITHM
+algoDen = ALGORITHMl1
+outputDir = 74X_Summer15/correctionL2L3_NoPU/ratioCorrections/
+outputFormat = .png .pdf
+tdr = true
+labelNum = 74X
+labelDen = 53X

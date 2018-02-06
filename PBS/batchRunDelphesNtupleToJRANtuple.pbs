@@ -1,0 +1,17 @@
+#!/bin/sh
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=24:00:00
+#PBS -l mem=4GB
+#PBS -q stakeholder-4g
+#PBS -t 0-9
+cd /home/aperloff/JEC/CMSSW_8_1_0_pre9/src
+export SCRAM_ARCH=slc6_amd64_gcc530
+eval `scramv1 runtime -sh`
+cd /fdata/hepx/store/user/aperloff/JEC/
+export X509_USER_PROXY=${HOME}/.x509up_u${UID}
+
+export RELEASE_ERA="81X_Delphes"
+
+DelphesNtupleToJRANtuple_x ${RELEASE_ERA}/batchInputDelphesNtupleToJRANtuple${SLURM_ARRAY_TASK_ID}_0.txt
+
+exit 0

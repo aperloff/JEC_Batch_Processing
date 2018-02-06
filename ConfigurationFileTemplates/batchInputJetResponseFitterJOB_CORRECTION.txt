@@ -1,0 +1,8 @@
+input = INPUT
+output = OUTPUT
+niter = 10
+nsigma = 1.5
+fittype = FITTYPE
+doEtaRsp = DOETARSP
+doPhiRsp = DOPHIRSP
+

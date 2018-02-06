@@ -1,0 +1,14 @@
+doPt = true
+doEta = true
+doRatioPt = true
+path = 74X_PFGED/closure_NoPU_v2/25ns/
+filename = Closure_ak4calo_ak4pf
+filepath1 = 74X_PFGED/closure_NoPU_v2/25ns/ClosureVsRefPt.root
+filepath2 = 74X_PFGED/closure_NoPU_v2/25ns/ClosureVsRefPt.root
+algo = ak4pf
+numerator = ak4calo
+denominator = ak4pf
+draw_guidelines = false
+draw_residual = false
+outputDir = 74X_PFGED/closure_NoPU_v2/25ns/
+

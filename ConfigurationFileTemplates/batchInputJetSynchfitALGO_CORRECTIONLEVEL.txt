@@ -1,0 +1,8 @@
+inputDir = INPUTDIRECTORY
+outputDir = OUTPUTDIRECTORY
+algo1 = ALGORITHM
+algo2 = ALGORITHM
+highPU = false
+useNPU = false
+functionType = FUNCTIONTYPE
+era = ERA

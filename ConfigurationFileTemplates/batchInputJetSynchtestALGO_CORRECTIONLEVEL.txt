@@ -1,0 +1,17 @@
+basepath = /fdata/hepx/store/user/aperloff/
+samplePU = QCD_Pt-15to7000_TuneCUETP8M1_FlatP6_13TeV_pythia8/PUPremix/170119_174534/JRA.root
+sampleNoPU = QCD_Pt-15to7000_TuneCUETP8M1_FlatP6_13TeV_pythia8/NoPU_TrancheIV/170119_174435/JRA.root
+algo1 = ALGORITHM
+algo2 = ALGORITHM
+iftest = false
+maxEvts = 3000000
+ApplyJEC = APPLYJEC
+JECpar = JECTEXTFILE
+outputPath = OUTPUTPATH
+npvRhoNpuBinWidth = 10
+NBinsNpvRhoNpu = 6
+MCPUReWeighting = JEC/80X_Summer16/PUReWeighting/MyMCPileupHistogram_PUPremix.root
+DataPUReWeighting = JEC/80X_Summer16/PUReWeighting/MyDataPileupHistogram.root
+useweight = false
+nrefmax = 2
+readEvtMaps = MATCHEDEVENTMAPS

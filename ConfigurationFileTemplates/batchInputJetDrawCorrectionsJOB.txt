@@ -1,0 +1,12 @@
+$algs = ak1pf ak2pf ak3pf ak4pf ak5pf ak6pf ak7pf ak8pf ak9pf ak10pf ak1pfchs ak2pfchs ak3pfchs ak4pfchs ak5pfchs ak6pfchs ak7pfchs ak8pfchs ak9pfchs ak10pfchs ak1puppi ak2puppi ak3puppi ak4puppi ak5puppi ak6puppi ak7puppi ak8puppi ak9puppi ak10puppi
+algs = ak4pf ak5pf ak7pf ak8pf ak4pfchs ak5pfchs ak7pfchs ak8pfchs ak4puppi ak5puppi ak7puppi ak8puppi
+era = Summer15_V1_MC
+path = 74X_Summer15/Summer15_V1_txts/
+outputDir = 74X_Summer15/correctionL2L3_NoPU/
+useL1FasCor = false
+useL1OffCor = false
+useL2Cor = true
+useL3Cor = true
+useL2L3ResCor = false
+tdr = true
+combineAlgs = true

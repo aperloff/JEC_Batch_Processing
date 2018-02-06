@@ -1,0 +1,23 @@
+#!/bin/sh
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=24:00:00
+#PBS -q stakeholder
+#PBS -t 3-4
+#cd /home/aperloff/JEC/CMSSW_7_3_3_testPUPPI/src
+#cd /home/aperloff/JEC/CMSSW_7_4_1/src
+cd /home/aperloff/JEC/CMSSW_8_0_20/src
+#export SCRAM_ARCH=slc6_amd64_gcc491
+export SCRAM_ARCH=slc6_amd64_gcc530
+eval `scramv1 runtime -sh`
+cd /fdata/hepx/store/user/aperloff/JEC/
+
+#export RELEASE_ERA="72X_PHYS14"
+#export RELEASE_ERA="73X_Spring15"
+#export RELEASE_ERA="73X_testPUPPI"
+#export RELEASE_ERA="74X_Summer15"
+#export RELEASE_ERA="74X_PFGED"
+export RELEASE_ERA="80X_Summer16"
+
+jet_l2_correction_x ${RELEASE_ERA}/batchInputJetLevel2Correction${SLURM_ARRAY_TASK_ID}.txt
+
+exit 0
